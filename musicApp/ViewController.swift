@@ -26,6 +26,14 @@ class ViewController: UIViewController {
         //playing sounds
         playSound(label: sender.currentTitle!)
         
+        //reduces opacity of the button pressed to half
+        sender.alpha = 0.5
+        
+        //0.2 second delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            //brings opacity of the button pressed back to fully opaque
+            sender.alpha = 1.0
+        }
     }
     
     func playSound(label : String) {
